@@ -1,0 +1,16 @@
+There will be one .cpp file and one .h file for each class
+No single letter variable names 
+camelCase variables and ALL_CAPS for constants
+Opening and closing brace should have their own lines
+for(...)
+{
+…
+}
+Tab or indent equal to four spaces 
+Limit uses of cout<< during a single output statement to one
+Declare and initialize variable at the same time 
+int myInt = 6;
+Do your best to avoid global or static variables 
+Spaces between variables and operators (i.e. int i = 0; i + 1;) 
+Use #pragma once instead of #ifndef 
+Always error check user input 
