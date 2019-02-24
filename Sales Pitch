@@ -1,0 +1,33 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+void salesPitch();
+
+int main()
+{
+	salesPitch();
+
+	return 0;
+}
+
+void salesPitch()
+{
+	cout << "It has become so difficult to find a reliable bomb detecting robot.\n"
+		<< "Our company is here to provide a safe and affordable product to \n"
+		<< "detect and diffuse bombs. Our products are truly unique due to the \n"
+		<< "many options we provide for the different terrains all over the world.\n"
+		<< "Our robots are fully functional in the deserts of the middle east, \n"
+		<< "the jungles in South America and the urban grounds in Europe.Not \n"
+		<< "only are our products adaptable, they are also durable. Our products \n"
+		<< "weight around 15 to 20 pounds depending on the selected model. They \n"
+		<< "are 36 inches high. In case of a malfunction, we provide a great \n"
+		<< "guarantee policy along with the purchase(more information can be \n"
+		<< "found under the guarantee policy page). The product also comes with \n"
+		<< "additional services for repairs and replacements listed in the \n"
+		<< "maintenance plan. Our robots have been given a 4.5 rating by the \n"
+		<< "national bomb defusal robot agency. Reviews from our returning \n"
+		<< "customers can be found here. \n"
+		<< "So don't wait, Buy your bomb detecting robot today! \n\n";
+}
