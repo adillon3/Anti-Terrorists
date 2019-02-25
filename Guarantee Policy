@@ -1,0 +1,30 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+void guaranteePolicy();
+
+int main()
+{
+	guaranteePolicy();
+
+	return 0;
+}
+
+
+void guaranteePolicy()
+{
+	cout << "The products listed on our pamphlet come with a guarantee policy in \n"
+		<< "case of any malfunction. We can guarantee that our products provide \n"
+		<< "the latest technology in comparison to all our competitors. Products \n"
+		<< "are designed to be durable and effective but if our customers are not \n"
+		<< "satisfied, we allow a return with 30 days with full refund. We provide \n"
+		<< "an immediate return, although the processing in the bank may take 5 - 7 \n"
+		<< "business days. If the products have issues regarding to specific parts, \n"
+		<< "we provide repairs or replacements for 365 days after the purchase. \n"
+		<< "This service is included in the purchase price. We can provide repairs \n"
+		<< "and replacements after 365 days for additional costs. \n"
+		<< "For additional information, please contact us under the Help menu.\n\n";
+}
