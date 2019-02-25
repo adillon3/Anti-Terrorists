@@ -1,0 +1,20 @@
+#include <iomanip>
+#include <iostream>
+using namespace std;
+
+void contactUs();
+int main()
+{
+	contactUs();
+  
+	return 0;
+}
+
+void contactUs()
+{
+	cout << "Anti-Terrorists contact information:\n\n"
+		   << "Phone Number:  (949)639-9179\n"
+		   << "Address:       230 Forest Avenue, Palo Alto,\n"
+		   << right << setw(25) << "CA, 94304\n"
+       << "Support Email: antiterrorists@gmail.com";
+}
