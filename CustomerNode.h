@@ -3,7 +3,9 @@
 #include <string>
 #include <fstream>
 
-struct cNode {
+class cNode {
+public:
+	cNode() : company(""), address(""), cityStateZip(""), interest(""), importance(""), nxt(nullptr), prv(nullptr), urbanBought(0), desertBought(0), jungleBought(0), pamphletsOrdered(0) {};
 	std::string company;
 	std::string address;
 	std::string cityStateZip;
@@ -11,4 +13,8 @@ struct cNode {
 	std::string importance;
 	cNode *nxt;
 	cNode *prv;
+	int urbanBought;
+	int desertBought;
+	int jungleBought;
+	int pamphletsOrdered;
 };
