@@ -22,7 +22,7 @@ public:
     void buyjunglebot(std::string, int);
     void buyurbanbot(std::string, int);
     void buydesertbot(std::string, int);
-    void orderPamplhet(int);
+    void orderPamplhet(std::string, int);
     cNode *first;
 
 private:
@@ -403,6 +403,16 @@ void customerList::buydesertbot(std::string name, int amt) {
     if (!found) std::cout << "company not found in list...please try again\n";
 }
 
+void customerList::orderPamplhet(std::string name, int amt){
+    cNode *tmp = first;
+
+    while (tmp != nullptr) {
+        if (tmp->company == name) {
+            tmp->pamphletsOrdered = tmp->pamphletsOrdered + amt;
+        }
+        tmp = tmp->nxt;
+    }
+}
 
 
 #endif // CUSTOMER_LIST_H
