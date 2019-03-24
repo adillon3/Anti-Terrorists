@@ -29,7 +29,20 @@ void SecDialog::on_pushButton_clicked()
 
    QTextStream in(&file); //converts file to a stream
 
-    ui->textBrowser->setText(in.readAll());
+    //ui->textBrowser->setText(in.readAll());
+   while(!in.atEnd()){
+   ui->textBrowser->append(in.readLine());
+   ui->textBrowser->append(in.readLine());
+   ui->textBrowser->append(in.readLine());
+   ui->textBrowser->append(in.readLine());
+   ui->textBrowser->append(in.readLine());
+   ui->textBrowser->append("Pamplhets Ordered: " + in.readLine());
+   in.readLine();
+   in.readLine();
+   in.readLine();
+   in.readLine();
+   ui->textBrowser->append("\n");
+   }
 
 }
 
@@ -49,7 +62,20 @@ void SecDialog::on_pushButton_2_clicked()//sort list
 
     QTextStream in(&file); //converts file to a stream
 
-     ui->textBrowser->setText(in.readAll());
+     //ui->textBrowser->setText(in.readAll());
+    while(!in.atEnd()){
+    ui->textBrowser->append(in.readLine());
+    ui->textBrowser->append(in.readLine());
+    ui->textBrowser->append(in.readLine());
+    ui->textBrowser->append(in.readLine());
+    ui->textBrowser->append(in.readLine());
+    ui->textBrowser->append("Pamplhets Ordered: " + in.readLine());
+    in.readLine();
+    in.readLine();
+    in.readLine();
+    in.readLine();
+    ui->textBrowser->append("\n");
+    }
 
 
     //ui->textBrowser->append("hello");
@@ -91,7 +117,7 @@ void SecDialog::on_pushButton_4_clicked() //show customers including purchase
     cNode *tmp = mylist.first;
 
     while (tmp != nullptr) {
-        if (tmp->importance == "key") {
+
             ui->textBrowser->append(QString::fromStdString(tmp->company));
             ui->textBrowser->append(QString::fromStdString(tmp->address));
             ui->textBrowser->append(QString::fromStdString(tmp->cityStateZip));
@@ -103,7 +129,7 @@ void SecDialog::on_pushButton_4_clicked() //show customers including purchase
             ui->textBrowser->append("Desert Robots Bought: " + QString::number(tmp->desertBought));
             ui->textBrowser->append("\n");
 
-        }
+
         tmp = tmp->nxt;
     }
 }
@@ -139,7 +165,7 @@ void SecDialog::on_lineEdit_returnPressed()
    */
 
 
-void SecDialog::on_pushButton_5_clicked()
+void SecDialog::on_pushButton_5_clicked() //add to list
 {
     QString texttmp = ui->textEdit->toPlainText();
     QStringList strList = texttmp.split(QRegExp("[\n]"));
