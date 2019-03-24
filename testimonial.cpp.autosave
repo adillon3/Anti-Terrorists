@@ -1,0 +1,86 @@
+#include "testimonial.h"
+
+Testimonial::Testimonial()
+{
+    ifstream fin("C:\\Users\\Cam\\Desktop\\Testimonial.txt");
+        if (!fin)
+        {
+            //maybe change so it doesnt exit program completely later
+            std::cout << "Error opening file. Please try again\n";
+            std::exit(0);
+        }
+
+        testimonialNode newTestimonialNode;
+
+        vectorSize = 0;
+
+        while(!fin.eof())
+        {
+            getline(fin,newTestimonialNode.customerName);
+            //fin.ignore('\n',1000);
+            cout << "Customer Name: " << newTestimonialNode.customerName << endl;
+
+            getline(fin,newTestimonialNode.customerTestimonial);
+            //fin.ignore('\n',1000);
+            cout << "Customer Testimonial: "
+                 << newTestimonialNode.customerTestimonial << endl;
+
+            //Extra ignore to get past blank line between entries
+            fin.ignore(10000,'\n');
+
+
+            myTestimonials.push_back(newTestimonialNode);
+
+            vectorSize ++;
+        }
+        fin.close();
+}
+
+Testimonial::~Testimonial()
+{
+    unsigned int index;
+
+    ofstream fout("C:\\Users\\Cam\\Desktop\\Testimonial.txt");
+        if (!fout)
+        { //maybe change to loop later
+            std::cout << "Problem opening file. Exiting program w/o saving\n";
+            std::exit(0);
+        }
+
+    for(index = 0; index < vectorSize; index++)
+    {
+        //if the customer name is empty, the saved name is set to Anonymous
+        if(myTestimonials[index].customerName.empty())
+        {
+            fout << "Anonymous" << endl;
+        }
+        else
+        {
+            fout << myTestimonials[index].customerName << endl;
+        }//END if(myTestimonials[index].customerName == " ")
+
+        fout << myTestimonials[index].customerTestimonial << endl;
+
+        //Accounting for blank line between testimonials
+        if(index + 1 != vectorSize)
+        {
+            fout << endl;
+        }
+
+    }//END for(index = 0; index < vectorSize; index++)
+
+    fout.close();
+}
+
+void Testimonial :: addTestimonial(string name, string entry)
+{
+    testimonialNode newTestimonialNode;
+
+    newTestimonialNode.customerName = name;
+    newTestimonialNode.customerTestimonial = entry;
+
+    //Adding node to vector
+    myTestimonials.push_back(newTestimonialNode);
+
+    vectorSize ++;
+}
