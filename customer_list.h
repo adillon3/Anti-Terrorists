@@ -46,12 +46,14 @@ void customerList::poplist() {
 
     cNode *tmp = nullptr;
     cNode *loop = nullptr;
-    std::string company, address, cityStateZip, interest, importance, space;
+    std::string company, address, cityStateZip, interest, importance, pamph, urob, drob, jrob, space;
 
 
     while (getline(fin, company) && getline(fin, address) &&
         getline(fin, cityStateZip) && getline(fin, interest) &&
-        getline(fin, importance) && getline(fin, space)) {
+        getline(fin, importance) && getline(fin, pamph) &&
+           getline(fin, urob) && getline (fin, drob) &&
+           getline(fin, jrob) && getline(fin, space)) {
 
         tmp = new cNode;
         tmp->nxt = nullptr;
@@ -60,6 +62,10 @@ void customerList::poplist() {
         tmp->cityStateZip = cityStateZip;
         tmp->interest = interest;
         tmp->importance = importance;
+        tmp->pamphletsOrdered = std::stoi(pamph);
+        tmp->urbanBought = std::stoi(urob);
+        tmp->desertBought = std::stoi(drob);
+        tmp->jungleBought = std::stoi(jrob);
         ++rc;
 
         //not first node
@@ -105,7 +111,12 @@ void customerList::saveexit() {
 
         if (first->importance.empty())
             first->importance = "NA";
-        fout << first->importance << "\n\n";
+        fout << first->importance << "\n";
+
+        fout<< first->pamphletsOrdered << "\n";
+        fout<<first->urbanBought << "\n";
+        fout<<first->desertBought<<"\n";
+        fout<<first->jungleBought<<"\n\n";
 
         tmp = first;
         first = first->nxt;
@@ -181,6 +192,10 @@ void customerList::addtolist(std::string company, std::string address, std::stri
     //std::cout << "Importance: ";
     //getline(std::cin, newlast->importance);
     newlast->importance = importance;
+    newlast->pamphletsOrdered = 0;
+    newlast->urbanBought = 0;
+    newlast->jungleBought = 0;
+    newlast->desertBought = 0;
 
     ++this->rc;
 }
@@ -255,6 +270,7 @@ void customerList::sortall() {
     std::string tmpcityStateZip;
     std::string tmpinterest;
     std::string tmpimportance;
+    int tmppam, tmpubot, tmpdbot, tmpjbot;
 
     if (this->rc == 1)
         std::cout << "No need to sort, there is only one entry.\n";
@@ -269,18 +285,30 @@ void customerList::sortall() {
                 tmpcityStateZip = i->cityStateZip;
                 tmpinterest = i->interest;
                 tmpimportance = i->importance;
+                tmppam = i->pamphletsOrdered;
+                tmpubot = i->urbanBought;
+                tmpdbot = i->desertBought;
+                tmpjbot = i->jungleBought;
 
                 i->company = j->company;
                 i->address = j->address;
                 i->cityStateZip = j->cityStateZip;
                 i->interest = j->interest;
                 i->importance = j->importance;
+                i->pamphletsOrdered = j->pamphletsOrdered;
+                i->urbanBought = j->urbanBought;
+                i->desertBought = j->desertBought;
+                i->jungleBought = j->jungleBought;
 
                 j->company = tmpcompany;
                 j->address = tmpaddress;
                 j->cityStateZip = tmpcityStateZip;
                 j->interest = tmpinterest;
                 j->importance = tmpimportance;
+                j->pamphletsOrdered = tmppam;
+                j->urbanBought = tmpubot;
+                j->desertBought = tmpdbot;
+                j->jungleBought = tmpjbot;
 
             }
         }
