@@ -1,0 +1,141 @@
+#ifndef CUSTOMER_NODE_H
+
+#define CUSTOMER_NODE_H
+
+
+
+#include <iostream>
+
+#include <string>
+
+#include <fstream>
+
+
+
+//! A customer node class
+
+/*!
+
+ * customer node class that stores the attributes of a customer
+
+ */
+class cNode {
+
+public:
+
+	//! A constructor.
+
+	/*!
+
+	  Creates and initializes the customer node
+
+	 */
+    cNode() : company(""), address(""), cityStateZip(""), interest(""), importance(""), nxt(nullptr), prv(nullptr), urbanBought(0), desertBought(0), jungleBought(0), pamphletsOrdered(0) {}
+
+	//! A normal member initializes the company name
+
+	/*!
+
+	  \brief A member function that initializes the company name
+
+	 */
+    std::string company;
+
+	//! A normal member initializes the address
+
+	/*!
+
+	  \brief A member function that initializes the address
+
+	 */
+    std::string address;
+
+	//! A normal member initializes the cityStateZip
+
+	/*!
+
+	  \brief A member function that initializes the cityStateZip
+
+	 */
+    std::string cityStateZip;
+
+	//! A normal member initializes the interest
+
+	/*!
+
+	  \brief A member function that initializes the interest
+
+	 */
+    std::string interest;
+
+	//! A normal member initializes the importance
+
+	/*!
+
+	  \brief A member function that initializes the importance
+
+	 */
+    std::string importance;
+
+
+
+
+	//! A private variable
+
+	/*!
+
+	   pointer to next node *cNode
+
+	 */
+    cNode *nxt;
+
+    //! A private variable
+
+    	/*!
+
+    	   pointer to previous node *cNode
+
+    	 */
+    cNode *prv;
+
+	//! A private variable
+
+	/*!
+
+	   number of urban robots bought int
+
+	 */
+    int urbanBought;
+
+	//! A private variable
+
+	/*!
+
+	   number of desert robots bought int
+
+	 */
+    int desertBought;
+
+	//! A private variable
+
+	/*!
+
+	   number of jungle robots bought int
+
+	 */
+    int jungleBought;
+
+	//! A private variable
+
+	/*!
+
+	   number of pamphlets ordered int
+
+	 */
+    int pamphletsOrdered;
+
+};
+
+
+
+#endif // CUSTOMER_NODE_H
