@@ -1,0 +1,165 @@
+#pragma once
+
+#include<iostream>
+
+using namespace std;
+
+
+//! A Robot Type class
+
+/*!
+
+ * robot type class can add and delete robots from the cart
+
+ */
+class bombDefusalRobot {
+
+private:
+	//! A private data member variable
+
+	/*!
+
+	   price double
+
+	 */
+	double price;
+
+	//! A private data member variable
+
+	/*!
+
+	   robot type string
+
+	 */
+	string type;
+
+public:
+
+	//! A constructor.
+
+	/*!
+
+	  Creates the Bomb Defusal Robot object
+
+	 */
+	bombDefusalRobot();
+
+	//! A constructor.
+
+	/*!
+
+	  Creates the Bomb Defusal Robot object, initializing
+	  it to the values passed in
+
+	 */
+	bombDefusalRobot(double, string);
+
+	//!A normal member that prints the robots
+
+	/*!
+
+	  \brief prints the robots list
+
+	 */
+	void print();
+
+};
+
+
+
+bombDefusalRobot::bombDefusalRobot() {
+
+	price = 0;
+
+	type = "N/A";
+
+}
+
+
+
+bombDefusalRobot::bombDefusalRobot(double thePrice, string theType) {
+
+	price = thePrice;
+
+	type = theType;
+
+}
+
+
+
+void bombDefusalRobot::print() {
+
+	if (type == "Desert") {
+
+		cout << "Perfectly equipped for\n"
+
+			<< "operations in hot and arid environments.\n"
+
+			<< "It is equipped with heat resistant metal\n"
+
+			<< "plating that greatly reduces heat absorbtion.\n"
+
+			<< "In the event of overheating it comes equipped\n"
+
+			<< "with an internal cooling system of hydro fans.\n"
+
+			<< "It's batteries are solar powered, however a manual\n"
+
+			<< "charging station is also included. It drives on 6\n"
+
+			<< "treaded 5 in. tires for optimal mobility on rocky\n"
+
+			<< "and sandy terrain.\n";
+
+		cout << "Price: $" << price;
+
+	}
+
+	else if (type == "Jungle") {
+
+		cout << "Dense jungle is among the toughest terrain\n"
+
+			<< "to remotely navigate on wheels, which is why\n"
+
+			<< "our jungle model treads on hydraulic spider legs.\n"
+
+			<< "Which allows for easy traversal of uneven ground\n"
+
+			<< ",roots, and fallen trees. Our unique high tier\n"
+
+			<< "carbon mesh casing makes the robot light and water\n"
+
+			<< "resistant. Always be aware of weather patterns; it\n"
+
+			<< "can resist rain but not prolonged submursion such\n"
+
+			<< "in a flash flood.\n";
+
+		cout << "Price: $" << price;
+
+	}
+
+	else if (type == "Urban"){
+
+		cout << "Urban environments do not allow for flashy\n"
+
+			<< "clunky robots that could jeopardize the mission.\n"
+
+			<< "Our urban model is is a mere foot long and weighs\n"
+
+			<< "15 lbs. due to the size the battery only lasts 6\n"
+
+			<< "but can be portabely charged by the operator. \n"
+
+			<< "It comes equipped with an extremely powerful liquid\n"
+
+			<< "nitrogen jet that freezes a bomb's circuits for retreival\n"
+
+			<< "and disposal by a person. Unlike our other models it is\n"
+
+			<< "not capable of disposing of the bomb only defusing it.\n";
+
+		cout << "Price: $" << price;
+
+	}
+}
