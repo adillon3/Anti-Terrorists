@@ -1,0 +1,92 @@
+#ifndef MAINWINDOW_H
+
+#define MAINWINDOW_H
+
+
+
+#include <QMainWindow>
+
+
+
+namespace Ui {
+
+class MainWindow;
+
+}
+
+
+//! A Main Window class
+
+/*!
+
+ * Main Window class to display the menu
+
+ */
+class MainWindow : public QMainWindow
+
+{
+
+    Q_OBJECT
+
+
+
+public:
+
+	//! A constructor.
+
+	/*!
+
+	  constructor for the Main Window
+
+	*/
+    explicit MainWindow(QWidget *parent = nullptr);
+
+	//! A destructor.
+
+	/*!
+
+	  Destructor for the Main Window
+
+	*/
+    ~MainWindow();
+
+
+
+private slots:
+
+	//! A private variable
+
+	/*!
+
+		on_pushButton_clicked
+
+	*/
+    void on_pushButton_clicked();
+
+
+	//! A private variable
+
+	/*!
+
+		on_pushButton_2_clicked
+
+	*/
+    void on_pushButton_2_clicked();
+
+
+
+private:
+	//! A private variable
+
+	/*!
+
+		ui
+
+	*/
+    Ui::MainWindow *ui;
+
+};
+
+
+
+#endif // MAINWINDOW_H
